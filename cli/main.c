@@ -41,6 +41,8 @@ char* generate_secret (int length) {
         length = 16;
     }
 
+    srand(time(NULL));
+
     value = malloc(length + 1 * sizeof(char));
     otp_random_base32(length, otp_DEFAULT_BASE32_CHARS, value);
     value[length] = '\0';
